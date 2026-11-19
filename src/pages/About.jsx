@@ -78,7 +78,10 @@ stack . Additionally interested  in Cyber Security , Data Science, AI.</p>
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 1 }}
 >
-          <img src="/about.jpg" alt="Nourin" />
+          <img
+            src={`${import.meta.env.BASE_URL}about.jpg`}
+            alt="Nourin"
+          />
         </motion.div>
 
       </div>

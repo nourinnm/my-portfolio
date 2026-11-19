@@ -40,14 +40,14 @@ function Home() {
 
       <motion.div
   className="hero-center"
-  className="hero-center"
+ 
   initial={{ opacity: 0, scale: 0.8 }}
   animate={{ opacity: 1, scale: 1 }}
   transition={{ duration: 1 }}
 
 >
         <img
-          src="/hero.jpg"
+          src={`${import.meta.env.BASE_URL}hero.jpg`}
           alt="Nourin"
           className="profile"
         />

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "../styles/Projects.css";
 import { motion } from "framer-motion";
@@ -5,75 +6,76 @@ import { motion } from "framer-motion";
 function Projects() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  const base = import.meta.env.BASE_URL;
+
   const projects = [
     {
       title: "Portfolio Website",
-      image: "/project4.jpg",
+      image: `${base}project4.jpg`,
       description:
         "A responsive personal portfolio built with React, featuring smooth animations and a modern UI.",
-      video: "/portfolio-demo.mp4",
+      video: `${base}portfolio-demo.mp4`,
     },
     {
       title: "Calculator Website",
-      image: "/project2.jpg",
+      image: `${base}project2.jpg`,
       description:
         "A stylish calculator built using React with interactive UI and responsive design.",
-      video: "/calculator-demo.mp4",
+      video: `${base}calculator-demo.mp4`,
     },
     {
       title: "File Encryption & Decryption",
-      image: "/project3.jpg",
+      image: `${base}project3.jpg`,
       description:
         "Java-based application for securely encrypting and decrypting files.",
-      video: "/encryption-demo.mp4",
+      video: `${base}encryption-demo.mp4`,
     },
   ];
 
   return (
-   <motion.section
-  className="projects-page"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 0.8 }}
->
-      <motion.div
-  className="projects-header"
-  initial={{ opacity: 0, x: -80 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8 }}
->
-  <p className="subtitle">MY WORK</p>
-  <h1 className="title">Recent Projects</h1>
-</motion.div>
-      <div className="projects-grid">
-  {projects.map((project, index) => (
-    <motion.div
-      className="project-card"
-      key={index}
-      initial={{ opacity: 0, y: 80 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.2,
-      }}
+    <motion.section
+      className="projects-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
     >
-      <img src={project.image} alt={project.title} />
+      <motion.div
+        className="projects-header"
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <p className="subtitle">MY WORK</p>
+        <h1 className="title">Recent Projects</h1>
+      </motion.div>
 
-      <div className="project-content">
-        <h3>{project.title}</h3>
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <motion.div
+            className="project-card"
+            key={index}
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.2,
+            }}
+          >
+            <img src={project.image} alt={project.title} />
 
-        <p>{project.description}</p>
+            <div className="project-content">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
 
-        <button
-          className="view-btn"
-          onClick={() => setSelectedVideo(project.video)}
-        >
-          View Project →
-        </button>
-      </div>
-    </motion.div>
-  ))}
-
+              <button
+                className="view-btn"
+                onClick={() => setSelectedVideo(project.video)}
+              >
+                View Project →
+              </button>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       {selectedVideo && (
