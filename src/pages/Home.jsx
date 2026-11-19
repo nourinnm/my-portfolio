@@ -26,7 +26,10 @@ function Home() {
         <p>Currently exploring React, JavaScript, and UI/UX design to create engaging digital experiences.</p>
 
         <div className="hero-buttons">
-          <a href="/resume.pdf" download>
+          <a
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
+            download="Nourin-Resume.pdf"
+          >
             <button>Download Resume</button>
           </a>
 
