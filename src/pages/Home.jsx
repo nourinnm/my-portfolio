@@ -30,7 +30,7 @@ function Home() {
   href={`${import.meta.env.BASE_URL}resume.pdf`}
   target="_blank"
   rel="noopener noreferrer"
-  className="resume-btn"
+  className="secondary"
 >
   View Resume
 </a>
