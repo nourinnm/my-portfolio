@@ -27,11 +27,13 @@ function Home() {
 
         <div className="hero-buttons">
           <a
-            href={`${import.meta.env.BASE_URL}resume.pdf`}
-            download="Nourin-Resume.pdf"
-          >
-            <button>Download Resume</button>
-          </a>
+  href={`${import.meta.env.BASE_URL}resume.pdf`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="resume-btn"
+>
+  View Resume
+</a>
 
           <a href="/about">
             <button className="secondary">
